@@ -55,7 +55,7 @@
     <section id="about" class="section">
       <div class="container two-column">
         <div>
-          <p class="section-label">/ ABOUT</p>
+          <p class="section-label">ABOUT</p>
           <h2>From mechatronics to AI.</h2>
         </div>
         <div class="about-copy">
@@ -82,7 +82,7 @@
 
     <section id="experience" class="section">
   <div class="container">
-    <p class="section-label">/ EXPERIENCE</p>
+    <p class="section-label">EXPERIENCE</p>
 
     <div class="section-heading">
       <h2>Professional experience.</h2>
@@ -112,6 +112,7 @@
       </p>
 
       <ul class="experience-list">
+        <tab>
         <li>
           Built and enhanced customer-facing mobile features, including contributions
           to the <strong>Quotes module</strong>, translating business requirements into
@@ -143,6 +144,7 @@
           peer code reviews, testing, client discussions, and bi-weekly production
           deployments.
         </li>
+          </tab>
       </ul>
 
       <div class="tags">
@@ -158,9 +160,9 @@
   </div>
 </section>
 
-    <section id="projects" class="section">
+<section id="projects" class="section">
   <div class="container">
-    <p class="section-label"> / PROJECTS</p>
+    <p class="section-label">PROJECTS</p>
     <div class="section-heading">
       <h2>Selected work.</h2>
       <p>Projects across machine learning, deep learning, data engineering, analytics, and visualization.</p>
@@ -169,14 +171,16 @@
     <div class="project-grid">
 
       <article class="project-card featured">
-        <div class="project-number">01</div>
+        <!-- <div class="project-number">01</div> -->
         <div class="project-content">
           <p class="project-type">TIME SERIES • DEEP LEARNING</p>
           <h3>Bike Rental Demand Forecasting</h3>
           <p>
-            I built a time-series forecasting pipeline to predict bike rental demand
-            using rental, weather, and temporal data. I compared LSTM, TCNN, Transformer,
-            and ConvLSTM models and used XGBoost for feature selection.
+            Built an end-to-end time-series forecasting pipeline to predict bike rental demand,
+            achieving a best <strong>R² score of 0.92 on unseen test data</strong>. Designed temporal
+            and weather feature engineering workflows, applied XGBoost-based feature selection,
+            and benchmarked LSTM, TCNN, Transformer, and ConvLSTM architectures using RMSE, MAE,
+            MAPE, and R².
           </p>
           <div class="result">
             <strong>R² = 0.92</strong>
@@ -186,7 +190,9 @@
             <span>Python</span>
             <span>TensorFlow</span>
             <span>LSTM</span>
+            <span>TCNN</span>
             <span>Transformers</span>
+            <span>ConvLSTM</span>
             <span>XGBoost</span>
           </div>
         </div>
@@ -194,14 +200,16 @@
 
 
       <article class="project-card">
-        <div class="project-number">02</div>
+        <!-- <div class="project-number">02</div> -->
         <div class="project-content">
           <p class="project-type">NLP • TRANSFORMERS</p>
           <h3>Text-Based Emotion Detection</h3>
           <p>
-            I developed a multi-class emotion classification pipeline using BERT and
-            Deep LMU. I experimented with pooling strategies and addressed class
-            imbalance while comparing different model architectures.
+            Built a multi-class emotion classification pipeline using <strong>BERT contextual
+            embeddings and Deep LMU</strong> to improve contextual representation and sequential
+            feature learning, achieving <strong>96% validation accuracy</strong>. Developed
+            preprocessing and class-imbalance handling workflows, evaluated mean, max, and min
+            pooling strategies, and benchmarked standalone and hybrid architectures.
           </p>
           <div class="result">
             <strong>96% validation accuracy</strong>
@@ -211,31 +219,36 @@
             <span>Python</span>
             <span>PyTorch</span>
             <span>BERT</span>
+            <span>Hugging Face</span>
             <span>Deep LMU</span>
-            <span>NLP</span>
+            <span>Scikit-learn</span>
           </div>
         </div>
       </article>
 
 
       <article class="project-card">
-        <div class="project-number">03</div>
+        <!-- <div class="project-number">03</div> -->
         <div class="project-content">
           <p class="project-type">COMPUTER VISION • OBJECT DETECTION</p>
           <h3>Automated Road Damage Detection</h3>
           <p>
-            I developed an object detection pipeline to identify seven types of road
-            damage using 8,000 annotated street-view images. I evaluated multiple YOLO
-            architectures and integrated Transformer blocks into YOLOv5m.
+            Built an object detection pipeline for <strong>20,804 road damage instances across
+            seven categories</strong>, using an annotated dataset of 8,000 street-view images.
+            Evaluated YOLOv5, YOLOv8, and YOLOv11 architectures, and improved detection performance
+            by integrating Transformer blocks with YOLOv5m alongside architecture refinement,
+            pretrained weights, hyperparameter tuning, and augmentation experiments.
           </p>
           <div class="result">
             <strong>0.814 precision</strong>
-            <span>20,804 damage instances across 7 categories</span>
+            <span>20,804 instances across 7 damage categories</span>
           </div>
           <div class="tags">
             <span>Python</span>
             <span>PyTorch</span>
-            <span>YOLO</span>
+            <span>YOLOv5</span>
+            <span>YOLOv8</span>
+            <span>YOLOv11</span>
             <span>Transformers</span>
             <span>OpenCV</span>
           </div>
@@ -244,19 +257,20 @@
 
 
       <article class="project-card">
-        <div class="project-number">04</div>
+        <!-- <div class="project-number">04</div> -->
         <div class="project-content">
           <p class="project-type">LLM • NLP • STREAMLIT</p>
-          <h3>AI-Powered Metadata Extractor</h3>
+          <h3>AI-Powered Metadata Extractor for Biographical Interviews</h3>
           <p>
-            I built an LLM-powered application to extract structured metadata from
-            German biographical interview transcripts. I evaluated multiple LLMs and
-            developed context-based chunking and JSON schema-based prompting for
-            consistent metadata extraction.
+            Built an end-to-end LLM-powered metadata extraction pipeline to transform unstructured
+            German biographical interview transcripts into structured archival metadata. Designed
+            context-based chunking using TF-IDF and cosine similarity, evaluated multiple LLMs,
+            and selected <strong>Llama 3.3 70B with 95.83% extraction accuracy</strong>, while using
+            JSON schema-based prompt engineering to standardize <strong>130+ metadata attributes</strong>.
           </p>
           <div class="result">
             <strong>95.83% extraction accuracy</strong>
-            <span>Standardized 130+ metadata attributes</span>
+            <span>130+ metadata attributes standardized</span>
           </div>
           <div class="tags">
             <span>Python</span>
@@ -265,21 +279,23 @@
             <span>Streamlit</span>
             <span>Prompt Engineering</span>
             <span>TF-IDF</span>
+            <span>JSON</span>
           </div>
         </div>
       </article>
 
 
       <article class="project-card">
-        <div class="project-number">05</div>
+        <!-- <div class="project-number">05</div> -->
         <div class="project-content">
           <p class="project-type">DATA ENGINEERING • BIG DATA</p>
           <h3>Streaming Pulse — Spotify Trend Analysis</h3>
           <p>
-            I built an automated data pipeline combining Spotify API data with Airflow
-            orchestration, PySpark processing, and dbt-based data modeling in BigQuery.
-            The pipeline supports analysis of genre trends, artist performance, and
-            music metadata.
+            Built an automated big data pipeline for music industry analytics by integrating the
+            Spotify API with Airflow, PySpark, Google Cloud Dataproc, BigQuery, and dbt. Designed
+            dual data extraction workflows for historical trends and real-time playlist activity,
+            processed data through distributed Spark workflows, and developed analytical models to
+            examine <strong>genre trends, artist performance, and music metadata</strong>.
           </p>
           <div class="tags">
             <span>Python</span>
@@ -295,14 +311,16 @@
 
 
       <article class="project-card">
-        <div class="project-number">06</div>
+        <!-- <div class="project-number">06</div> -->
         <div class="project-content">
           <p class="project-type">MACHINE LEARNING • CLUSTERING</p>
           <h3>Automated Candidate Selection</h3>
           <p>
-            I analyzed technical profiles from GitHub and Stack Overflow and used
-            feature engineering, PCA, and K-Means clustering to explore feature-based
-            candidate grouping and ranking.
+            Built an automated candidate screening framework to analyze technical profiles from
+            GitHub and Stack Overflow and support feature-based candidate evaluation. Designed
+            data collection and preprocessing workflows, applied PCA and K-Means clustering to
+            identify candidate groupings, and developed a ranking approach that reduced candidate
+            screening time by <strong>30%</strong>.
           </p>
           <div class="result">
             <strong>30% less screening time</strong>
@@ -310,24 +328,26 @@
           </div>
           <div class="tags">
             <span>Python</span>
+            <span>GitHub API</span>
             <span>PCA</span>
             <span>K-Means</span>
-            <span>GitHub API</span>
+            <span>Machine Learning</span>
           </div>
         </div>
       </article>
 
 
       <article class="project-card">
-        <div class="project-number">07</div>
+        <!-- <div class="project-number">07</div> -->
         <div class="project-content">
           <p class="project-type">DATA ENGINEERING • CLOUD • ANALYTICS</p>
-          <h3>YouTube Analytics & Data Pipeline</h3>
+          <h3>YouTube Analytics &amp; Data Pipeline</h3>
           <p>
-            I built a cloud-based pipeline to collect and analyze YouTube channel and
-            video performance data. I used Python and the YouTube API for data collection,
-            Apache Beam for processing, BigQuery for data warehousing, and Power BI for
-            visualization.
+            Built an automated cloud-based data pipeline to collect and analyze YouTube channel
+            and video performance data. Designed Python-based YouTube API extraction workflows,
+            automated weekly execution using Cloud Scheduler, stored raw data in Google Cloud
+            Storage, processed datasets using Apache Beam, and loaded analytical data into
+            BigQuery for Power BI dashboards.
           </p>
           <div class="tags">
             <span>Python</span>
@@ -342,40 +362,45 @@
 
 
       <article class="project-card">
-        <div class="project-number">08</div>
+        <!-- <div class="project-number">08</div> -->
         <div class="project-content">
           <p class="project-type">DATA VISUALIZATION • SUSTAINABILITY</p>
-          <h3>Food Waste & Environmental Emissions Dashboard</h3>
+          <h3>Food Waste &amp; Environmental Emissions Dashboard</h3>
           <p>
-            I worked with FAOSTAT datasets to explore food loss and greenhouse gas
-            emissions across countries and commodities, transforming the data into
-            interactive dashboards for analysis and visualization.
+            Built an interactive analytics workflow using FAOSTAT datasets to examine relationships
+            between food loss, commodity production, and greenhouse gas emissions across
+            <strong>100+ countries</strong>. Cleaned and integrated datasets at country and commodity
+            levels and developed interactive Tableau and Power BI dashboards for environmental
+            and sustainability analysis.
           </p>
           <div class="tags">
             <span>FAOSTAT</span>
             <span>Tableau</span>
             <span>Power BI</span>
             <span>Data Cleaning</span>
+            <span>Data Visualization</span>
           </div>
         </div>
       </article>
 
 
       <article class="project-card">
-        <div class="project-number">09</div>
+        <!-- <div class="project-number">09</div> -->
         <div class="project-content">
           <p class="project-type">BIG DATA • HADOOP • SQL</p>
           <h3>Big Data Analytics for Strategic Film Production</h3>
           <p>
-            I collected and analyzed movie metadata and images from multiple rating
-            platforms, integrating the data into MySQL and Hadoop HDFS for large-scale
-            film analytics.
+            Built a large-scale film analytics workflow by collecting movie metadata and images
+            from three rating platforms and integrating the resulting datasets into MySQL and
+            Hadoop HDFS. Designed a data processing workflow to support analysis of film
+            performance, ratings, and production-related trends across multiple data sources.
           </p>
           <div class="tags">
+            <span>Python</span>
+            <span>Web Scraping</span>
+            <span>MySQL</span>
             <span>Hadoop</span>
             <span>HDFS</span>
-            <span>MySQL</span>
-            <span>Web Scraping</span>
             <span>SQL</span>
           </div>
         </div>
@@ -383,14 +408,15 @@
 
 
       <article class="project-card">
-        <div class="project-number">10</div>
+        <!-- <div class="project-number">10</div> -->
         <div class="project-content">
           <p class="project-type">COMPUTER VISION • ROBOTICS</p>
           <h3>Autonomous Wheelchair Navigation</h3>
           <p>
-            I developed a vision-based autonomous wheelchair system using YOLOv4 for
-            train compartment and door detection, combined with simulated path planning
-            and navigation logic.
+            Developed a vision-based autonomous wheelchair system for railway boarding assistance
+            by combining YOLOv4-based train compartment and door detection with simulated path
+            planning and navigation logic. Integrated computer vision with VREP, Lua, and MATLAB
+            simulation workflows.
           </p>
           <div class="result">
             <strong>97.16% compartment detection</strong>
@@ -401,25 +427,28 @@
             <span>OpenCV</span>
             <span>MATLAB</span>
             <span>VREP</span>
+            <span>Lua</span>
           </div>
         </div>
       </article>
 
 
       <article class="project-card">
-        <div class="project-number">11</div>
+        <!-- <div class="project-number">11</div> -->
         <div class="project-content">
           <p class="project-type">COMPUTER VISION • REAL-TIME AI</p>
           <h3>Human Behaviour Detection During Online Exams</h3>
           <p>
-            I developed a computer vision system combining face, gaze, and object
-            detection to identify behaviours such as phone usage, face absence, and
-            multiple people during online examinations.
+            Built a real-time computer vision system to identify potentially suspicious behaviours
+            during online examinations by combining face detection, gaze analysis, and object
+            detection. Designed detection workflows to flag <strong>phone usage, face absence,
+            and multiple people</strong> using OpenCV DNN and YOLO-based models.
           </p>
           <div class="tags">
             <span>OpenCV DNN</span>
             <span>YOLOv3</span>
             <span>COCO</span>
+            <span>Computer Vision</span>
             <span>Real-time AI</span>
           </div>
         </div>
@@ -427,18 +456,20 @@
 
 
       <article class="project-card">
-        <div class="project-number">12</div>
+        <!-- <div class="project-number">12</div> -->
         <div class="project-content">
           <p class="project-type">DATA STORYTELLING • TABLEAU</p>
           <h3>Tableau IronViz 2025 — TV Series Storytelling</h3>
           <p>
-            I analyzed an IMDb dataset of 199,469 TV series and created a narrative-driven
-            Tableau dashboard exploring Amazon Studios' competitive position and
-            superhero franchise growth.
+            Built a narrative-driven Tableau visualization using an IMDb dataset containing
+            <strong>199,469 TV series</strong>, exploring Amazon Studios' competitive position
+            and growth within the superhero entertainment landscape. Designed an interactive
+            data story to communicate trends and comparisons through visual analysis.
           </p>
           <div class="tags">
             <span>Tableau</span>
             <span>IMDb</span>
+            <span>Data Visualization</span>
             <span>Data Storytelling</span>
           </div>
         </div>
@@ -452,7 +483,7 @@
 <section id="research" class="section section-alt">
   <div class="container two-column">
     <div>
-      <p class="section-label">04 / RESEARCH</p>
+      <p class="section-label">RESEARCH</p>
       <h2>Research that connects AI with real-world mobility.</h2>
     </div>
 
@@ -472,10 +503,12 @@
       </div>
     </div>
   </div>
-</section>
+</section>    
+
+
     <section id="skills" class="section">
       <div class="container">
-        <p class="section-label">05 / SKILLS</p>
+        <p class="section-label">SKILLS</p>
         <div class="section-heading">
           <h2>My technical toolkit.</h2>
           <p>Tools I use to explore data, build models, engineer pipelines, and communicate insights.</p>
@@ -493,7 +526,7 @@
 
     <section id="achievements" class="section section-alt">
       <div class="container">
-        <p class="section-label">06 / ACHIEVEMENTS</p>
+        <p class="section-label">ACHIEVEMENTS</p>
         <div class="awards-grid">
           <article class="award-card"><span>🏆</span><h3>On the Spot Award</h3><p>Recognised at TCS for resolving a critical Store Finder feature crash and ensuring production stability.</p></article>
           <article class="award-card"><span>🏆</span><h3>On the Spot Award — Team</h3><p>Recognised for successfully delivering Quotes integration into the checkout workflow.</p></article>
@@ -504,7 +537,7 @@
 
     <section id="education" class="section">
       <div class="container">
-        <p class="section-label">07 / EDUCATION</p>
+        <p class="section-label">EDUCATION</p>
         <div class="education-list">
           <article class="education-item">
             <div class="education-year">2024 — 2026</div>
@@ -520,7 +553,7 @@
 
     <section id="contact" class="section contact-section">
       <div class="container contact-box">
-        <p class="section-label">08 / CONTACT</p>
+        <p class="section-label">CONTACT</p>
         <h2>Let's build something intelligent.</h2>
         <p>I'm interested in Data Science, Machine Learning, AI Engineering, and applied research opportunities.</p>
         <a class="email-link" href="mailto:a.navneethkrishna@gmail.com">a.navneethkrishna@gmail.com ↗</a>
