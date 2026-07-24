@@ -243,3 +243,21 @@
   }
 
 }
+
+/* =========================================
+   FIX: HERO NAME VISIBILITY
+========================================= */
+
+.hero .hero-text-content h1,
+.hero .hero-text-content h1 span {
+  color: #ffffff !important;
+  background: transparent !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline !important;
+}
