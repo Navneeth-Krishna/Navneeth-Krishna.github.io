@@ -88,53 +88,340 @@ a{color:inherit;text-decoration:none}
   font-weight: 700;
 }
 
-.hero-intro {
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+  min-height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 1.5rem;
+  overflow: hidden;
+  padding: 5rem 0;
 }
+
+
+/* Background grid */
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(var(--border-color) 0.8px, transparent 0.8px),
+    linear-gradient(90deg, var(--border-color) 0.8px, transparent 0.8px);
+
+  background-size: 60px 60px;
+
+  opacity: 0.25;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.4fr;
+
+  align-items: center;
+
+  gap: 5rem;
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.hero-profile {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* Image wrapper */
+
+.profile-image-wrapper {
+  width: 360px;
+  height: 360px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  position: relative;
+
+  border: 3px solid var(--accent-primary);
+
+  box-shadow:
+    0 0 30px rgba(79, 70, 229, 0.25),
+    0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Profile image */
 
 .profile-image {
-  width: 85px;
-  height: 85px;
+  width: 100%;
+  height: 100%;
+
   object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--accent-primary);
-  flex-shrink: 0;
-  box-shadow: var(--shadow-md);
+
+  object-position: center;
+
+  display: block;
 }
 
-.hero-name {
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.hero-text-content {
   display: flex;
+
   flex-direction: column;
+
+  align-items: flex-start;
+
+  text-align: left;
 }
 
-.hero-name .eyebrow {
-  margin-bottom: 0.5rem;
+
+/* Eyebrow */
+
+.hero-text-content .eyebrow {
+  font-family: 'Fira Code', monospace;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  color: var(--accent-secondary);
+
+  margin-bottom: 1rem;
 }
 
-.hero-name h1 {
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.hero-text-content h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.05em;
+
   margin: 0;
+
+  font-weight: 700;
 }
 
 
-/* Responsive layout */
+/* Gradient name */
 
-@media (max-width: 600px) {
+.hero-text-content h1 span {
+  background: var(--accent-gradient);
 
-  .hero-intro {
-    align-items: flex-start;
-    gap: 1rem;
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.hero-text-content h2 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+
+  font-weight: 500;
+
+  margin-top: 1.5rem;
+
+  max-width: 700px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-text {
+  max-width: 650px;
+
+  margin-top: 1rem;
+
+  font-size: 1.05rem;
+
+  line-height: 1.7;
+
+  color: var(--text-secondary);
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-actions {
+  display: flex;
+
+  gap: 1rem;
+
+  margin-top: 1.5rem;
+}
+
+
+/* =========================================
+   CONTACT LINKS
+========================================= */
+
+.hero-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 1.25rem;
+
+  margin-top: 1.5rem;
+}
+
+.hero-meta a,
+.hero-meta span {
+  font-size: 0.9rem;
+
+  color: var(--text-secondary);
+}
+
+.hero-meta a:hover {
+  color: var(--accent-secondary);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hero-content {
+
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+
+    text-align: center;
   }
 
-  .profile-image {
-    width: 65px;
-    height: 65px;
+
+  .hero-profile {
+
+    order: 1;
+
   }
 
-  .hero-name h1 {
-    font-size: 1.8rem;
+
+  .hero-text-content {
+
+    order: 2;
+
+    align-items: center;
+
+    text-align: center;
+
+  }
+
+
+  .profile-image-wrapper {
+
+    width: 280px;
+
+    height: 280px;
+
+  }
+
+
+  .hero-actions {
+
+    justify-content: center;
+
+  }
+
+
+  .hero-meta {
+
+    justify-content: center;
+
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .hero {
+
+    padding: 4rem 0;
+
+  }
+
+
+  .profile-image-wrapper {
+
+    width: 220px;
+
+    height: 220px;
+
+  }
+
+
+  .hero-text-content h1 {
+
+    font-size: 2.8rem;
+
+  }
+
+
+  .hero-actions {
+
+    flex-direction: column;
+
+    width: 100%;
+
+  }
+
+
+  .hero-actions .btn {
+
+    width: 100%;
+
   }
 
 }
