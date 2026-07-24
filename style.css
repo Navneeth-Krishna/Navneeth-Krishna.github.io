@@ -89,295 +89,156 @@ a{color:inherit;text-decoration:none}
 }
 
 /* =========================================
-   HERO SECTION
+   FINAL HERO LAYOUT OVERRIDE
 ========================================= */
 
-.hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  padding: 5rem 0;
+.hero .hero-content {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+
+  display: grid !important;
+
+  grid-template-columns: 360px minmax(0, 1fr) !important;
+
+  align-items: center !important;
+
+  column-gap: 5rem !important;
+
+  text-align: left !important;
 }
 
 
-/* Background grid */
+/* LEFT IMAGE */
 
-.hero-grid {
-  position: absolute;
-  inset: 0;
+.hero .hero-profile {
+  width: 360px !important;
+  height: 360px !important;
 
-  background-image:
-    linear-gradient(var(--border-color) 0.8px, transparent 0.8px),
-    linear-gradient(90deg, var(--border-color) 0.8px, transparent 0.8px);
+  display: flex !important;
 
-  background-size: 60px 60px;
+  align-items: center !important;
+  justify-content: center !important;
 
-  opacity: 0.25;
-
-  pointer-events: none;
+  order: 1 !important;
 }
 
 
-/* =========================================
-   HERO CONTENT
-========================================= */
+/* RIGHT CONTENT */
 
-.hero-content {
-  position: relative;
-  z-index: 2;
+.hero .hero-text-content {
+  width: 100% !important;
 
-  width: 100%;
-  max-width: 1200px;
+  display: flex !important;
 
-  margin: 0 auto;
+  flex-direction: column !important;
 
-  display: grid;
+  align-items: flex-start !important;
 
-  grid-template-columns: 0.9fr 1.4fr;
+  text-align: left !important;
 
-  align-items: center;
-
-  gap: 5rem;
+  order: 2 !important;
 }
 
 
-/* =========================================
-   PROFILE IMAGE
-========================================= */
+/* IMAGE */
 
-.hero-profile {
-  display: flex;
+.hero .profile-image-wrapper {
+  width: 360px !important;
+  height: 360px !important;
 
-  justify-content: center;
+  border-radius: 50% !important;
 
-  align-items: center;
-}
+  overflow: hidden !important;
 
+  position: relative !important;
 
-/* Image wrapper */
-
-.profile-image-wrapper {
-  width: 360px;
-  height: 360px;
-
-  border-radius: 50%;
-
-  overflow: hidden;
-
-  position: relative;
-
-  border: 3px solid var(--accent-primary);
+  border: 3px solid var(--accent-primary) !important;
 
   box-shadow:
     0 0 30px rgba(79, 70, 229, 0.25),
-    0 20px 60px rgba(0, 0, 0, 0.25);
+    0 20px 60px rgba(0, 0, 0, 0.25) !important;
 }
 
 
-/* Profile image */
+.hero .profile-image {
+  width: 100% !important;
+  height: 100% !important;
 
-.profile-image {
-  width: 100%;
-  height: 100%;
+  object-fit: cover !important;
 
-  object-fit: cover;
+  object-position: center !important;
 
-  object-position: center;
-
-  display: block;
+  display: block !important;
 }
 
 
-/* =========================================
-   HERO TEXT
-========================================= */
+/* TEXT */
 
-.hero-text-content {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-
-  text-align: left;
+.hero .hero-text-content h1 {
+  margin: 0 !important;
 }
 
 
-/* Eyebrow */
+.hero .hero-text-content .eyebrow {
+  margin-bottom: 1rem !important;
+}
 
-.hero-text-content .eyebrow {
-  font-family: 'Fira Code', monospace;
 
-  font-size: 0.9rem;
-
-  font-weight: 600;
-
-  letter-spacing: 0.12em;
-
-  color: var(--accent-secondary);
-
-  margin-bottom: 1rem;
+.hero .hero-text-content h2 {
+  margin-top: 1.5rem !important;
 }
 
 
 /* =========================================
-   MAIN HEADING
-========================================= */
-
-.hero-text-content h1 {
-  font-size: clamp(3rem, 6vw, 5.5rem);
-
-  line-height: 1.05;
-
-  letter-spacing: -0.05em;
-
-  margin: 0;
-
-  font-weight: 700;
-}
-
-
-/* Gradient name */
-
-.hero-text-content h1 span {
-  background: var(--accent-gradient);
-
-  -webkit-background-clip: text;
-
-  background-clip: text;
-
-  -webkit-text-fill-color: transparent;
-
-  color: transparent;
-}
-
-
-/* =========================================
-   SUBTITLE
-========================================= */
-
-.hero-text-content h2 {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-
-  font-weight: 500;
-
-  margin-top: 1.5rem;
-
-  max-width: 700px;
-}
-
-
-/* =========================================
-   DESCRIPTION
-========================================= */
-
-.hero-text {
-  max-width: 650px;
-
-  margin-top: 1rem;
-
-  font-size: 1.05rem;
-
-  line-height: 1.7;
-
-  color: var(--text-secondary);
-}
-
-
-/* =========================================
-   BUTTONS
-========================================= */
-
-.hero-actions {
-  display: flex;
-
-  gap: 1rem;
-
-  margin-top: 1.5rem;
-}
-
-
-/* =========================================
-   CONTACT LINKS
-========================================= */
-
-.hero-meta {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 1.25rem;
-
-  margin-top: 1.5rem;
-}
-
-.hero-meta a,
-.hero-meta span {
-  font-size: 0.9rem;
-
-  color: var(--text-secondary);
-}
-
-.hero-meta a:hover {
-  color: var(--accent-secondary);
-}
-
-
-/* =========================================
-   RESPONSIVE
+   TABLET / MOBILE
 ========================================= */
 
 @media (max-width: 900px) {
 
-  .hero-content {
+  .hero .hero-content {
 
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
 
-    gap: 3rem;
+    row-gap: 3rem !important;
 
-    text-align: center;
-  }
-
-
-  .hero-profile {
-
-    order: 1;
+    text-align: center !important;
 
   }
 
 
-  .hero-text-content {
+  .hero .hero-profile {
 
-    order: 2;
+    width: 100% !important;
 
-    align-items: center;
+    height: auto !important;
 
-    text-align: center;
-
-  }
-
-
-  .profile-image-wrapper {
-
-    width: 280px;
-
-    height: 280px;
+    order: 1 !important;
 
   }
 
 
-  .hero-actions {
+  .hero .hero-text-content {
 
-    justify-content: center;
+    order: 2 !important;
+
+    align-items: center !important;
+
+    text-align: center !important;
 
   }
 
 
-  .hero-meta {
+  .hero .hero-actions {
 
-    justify-content: center;
+    justify-content: center !important;
+
+  }
+
+
+  .hero .hero-meta {
+
+    justify-content: center !important;
 
   }
 
@@ -386,41 +247,11 @@ a{color:inherit;text-decoration:none}
 
 @media (max-width: 480px) {
 
-  .hero {
+  .hero .profile-image-wrapper {
 
-    padding: 4rem 0;
+    width: 240px !important;
 
-  }
-
-
-  .profile-image-wrapper {
-
-    width: 220px;
-
-    height: 220px;
-
-  }
-
-
-  .hero-text-content h1 {
-
-    font-size: 2.8rem;
-
-  }
-
-
-  .hero-actions {
-
-    flex-direction: column;
-
-    width: 100%;
-
-  }
-
-
-  .hero-actions .btn {
-
-    width: 100%;
+    height: 240px !important;
 
   }
 
