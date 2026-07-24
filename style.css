@@ -1687,15 +1687,15 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
-  margin-top: 2rem;
 }
 
 .skill-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 2rem;
+  border-radius: 18px;
+  padding: 1.75rem;
   box-shadow: var(--shadow-md);
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
@@ -1703,17 +1703,13 @@ a {
 }
 
 .skill-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--card-hover-shadow);
   border-color: var(--accent-primary);
 }
 
-.skill-category {
-  font-family: 'Fira Code', monospace;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--accent-primary);
+.skill-card h3 {
+  font-size: 1.15rem;
   margin-bottom: 1.25rem;
 }
 
@@ -1724,15 +1720,21 @@ a {
 }
 
 .skill-tags span {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.45rem 0.8rem;
+  display: inline-block;
+
+  padding: 0.45rem 0.75rem;
+
   border-radius: 999px;
+
   background: var(--tag-bg);
+
   border: 1px solid var(--tag-border);
+
   color: var(--tag-text);
-  font-size: 0.85rem;
+
+  font-size: 0.82rem;
   font-weight: 500;
+
   transition:
     transform 0.2s ease,
     border-color 0.2s ease;
